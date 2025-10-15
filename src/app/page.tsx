@@ -1,95 +1,114 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+// src/app/page.tsx
+import { Container, Box, Typography, Button, Card, CardContent, List, ListItem, ListItemText } from '@mui/material';
+import { Header } from '@/components/Header';
+import { Footer } from '@/components/Footer'; // Skapar denna i nästa steg
 
-export default function Home() {
+const FeatureCard = ({ id, title, description, points, ctaText, ctaColor }: { id: string, title: string, description: string, points: string[], ctaText: string, ctaColor?: string }) => (
+  <Card id={id} sx={{ height: '100%' }}>
+    <CardContent sx={{ p: 3 }}>
+      <Typography variant="h3" component="h3" sx={{ color: ctaColor ? ctaColor : 'text.primary', mb: 1.5 }}>
+        {title}
+      </Typography>
+      <Typography variant="body1" sx={{ mb: 2, color: 'text.secondary' }}>{description}</Typography>
+      <List dense sx={{ listStyleType: 'none', p: 0, mb: 2 }}>
+        {points.map((p, index) => (
+          <ListItem key={index} sx={{ display: 'flex', alignItems: 'center', py: 0.5, px: 0 }}>
+            <ListItemText primary={p} sx={{ '& .MuiListItemText-primary': { fontWeight: 500 } }} />
+          </ListItem>
+        ))}
+      </List>
+      <Button 
+        variant="contained" 
+        component="a"
+        href="#"
+        color={ctaColor ? 'secondary' : 'primary'}
+        sx={{ 
+            mt: 1.5,
+        }}
+      >
+        {ctaText}
+      </Button>
+    </CardContent>
+  </Card>
+);
+
+export default function HomePage() {
   return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol>
-          <li>
-            Get started by editing <code>src/app/page.tsx</code>.
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+    <Box sx={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
+      <Header />
 
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+      {/* Hero Sektion */}
+      <Container component="main" maxWidth="lg" sx={{ mt: 3, mb: 6, textAlign: 'center' }}>
+        <Box 
+            className="hero" 
+            sx={{ 
+                background: 'linear-gradient(180deg, rgba(37,99,235,0.06), rgba(37,99,235,0))',
+                padding: { xs: '48px 16px', md: '88px 24px' }, 
+                borderRadius: '16px', 
+                border: '1px solid rgba(15,23,42,0.08)'
+            }}
+        >
+          <Typography variant="h1" component="h1" sx={{ color: 'text.primary', mb: 1 }}>
+            Sveriges digitala studentcommunity
+          </Typography>
+          <Typography variant="h6" sx={{ fontSize: { xs: '1.05em', md: '1.2em' }, color: 'text.secondary', mb: 3.5, maxWidth: '820px', marginX: 'auto' }}>
+            StudentHubben samlar studenter, kårer och näringsliv. Bygg ditt nätverk, hitta samarbeten och ta nästa steg i karriären.
+          </Typography>
+
+          <Button 
+            variant="contained" 
+            component="a"
+            href="#anmalan" 
+            color="primary"
           >
-            <Image
-              className={styles.logo}
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
+            Gå med som student
+          </Button>
+        </Box>
+
+        {/* Funktioner Sektion */}
+        <Box sx={{ mt: 5 }}>
+          <Box sx={{ mb: 4, textAlign: 'center' }}>
+            <Typography variant="h2" component="h2">
+              Nätverket byggt för era behov
+            </Typography>
+          </Box>
+
+          <Box sx={{ 
+            display: 'grid', 
+            gap: '20px', 
+            gridTemplateColumns: { xs: '1fr', md: 'repeat(3, 1fr)' }, 
+            mb: 5 
+            }}>
+            
+            <FeatureCard
+              id="studenter"
+              title="För Studenter"
+              description="Knyt värdefulla kontakter, hitta studiegrupper och få tillgång till exklusiva praktikplatser och studentjobb. Fokus på samarbete, inte bara rekrytering."
+              points={['Projektgrupper & plugghjälp', 'Nätverka över campusgränserna', 'CV-profiler och Portfolio-verktyg']}
+              ctaText="Skapa Din Profil"
             />
-            Deploy now
-          </a>
-          <a
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.secondary}
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className={styles.footer}>
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+            
+            <FeatureCard
+              id="korer"
+              title="För Kårer & Föreningar"
+              description="Digitalisera er kommunikation och ert engagemang. En plattform för att nå alla era medlemmar, hantera event och rekrytera nya aktiva."
+              points={['Eventhantering och biljettsystem', 'Digitala mötesplatser för sektioner', 'Ökad medlemsaktivitet och räckvidd']}
+              ctaText="Läs Mer för Kårer"
+              ctaColor="#4267b2"
+            />
+            
+            <FeatureCard
+              id="arbetsgivare"
+              title="För Arbetsgivare & Aktörer"
+              description="Hitta exakt rätt kompetens genom att samarbeta direkt med studenter och kårer. Sponsra event, posta riktade studentjobb och stärk ert Employer Brand."
+              points={['Riktade jobbannonser', 'Samarbete med kårevent', 'Möjlighet till mentorprogram']}
+              ctaText="Partneransökan"
+              ctaColor="#5cb85c"
+            />
+          </Box>
+        </Box>
+      </Container>
+      <Footer />
+    </Box>
   );
 }
