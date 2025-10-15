@@ -1,36 +1,84 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# StudentHubben Mockup
 
-## Getting Started
+StudentHubben är en modern digital plattform för Sveriges studentvärld. Denna mockup är byggd med Next.js, React och Material UI, och visar hur ett framtida studentcommunity kan se ut – med fokus på nätverk, samarbete och tillgänglighet för studenter, kårer och arbetsgivare.
 
-First, run the development server:
+## Funktioner
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+- **Responsiv design:** Anpassad för både mobil och desktop.
+- **Ljust och mörkt tema:** Användare kan enkelt växla mellan ljus och mörk visning.
+- **Modern UI:** Färgstark, studentvänlig och tilltalande layout med MUI och egen theme.
+- **Navigering:** Tydlig header med meny, login-knapp och temaväxling.
+- **Footer:** Informativ och stilren footer med länkar och kontaktinformation.
+- **Demo-sidor:** Exempel på startsida och komponenter för olika målgrupper.
+
+## Teknik
+
+- [Next.js](https://nextjs.org/) – React-baserad ramverk för moderna webbappar
+- [React](https://react.dev/) – Komponentbaserat UI
+- [Material UI (MUI)](https://mui.com/) – UI-komponenter och theming
+- [TypeScript](https://www.typescriptlang.org/) – Typning och robust kod
+
+## Kom igång
+
+1. **Kloning:**
+   ```bash
+   git clone https://github.com/YOUR-USERNAME/mockup-student-site.git
+   cd mockup-student-site
+   ```
+2. **Installera beroenden:**
+   ```bash
+   npm install
+   ```
+3. **Starta utvecklingsserver:**
+   ```bash
+   npm run dev
+   ```
+4. **Öppna i webbläsaren:**
+   Gå till [http://localhost:3000](http://localhost:3000)
+
+## Struktur
+
+```
+mockup-student-site/
+├── src/
+│   ├── app/
+│   │   ├── layout.tsx
+│   │   ├── page.tsx
+│   │   └── globals.css
+│   ├── components/
+│   │   ├── Header.tsx
+│   │   ├── Footer.tsx
+│   │   └── ThemeRegistry.tsx
+│   └── theme/
+│       └── theme.ts
+├── public/
+│   └── studenthubben-logga.png
+├── package.json
+├── tsconfig.json
+└── README.md
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Designidé
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+StudentHubben är tänkt som en samlingsplats för studenter, kårer och arbetsgivare. Fokus ligger på:
+- **Nätverkande och samarbete**
+- **Enkel onboarding och tydlig navigation**
+- **Tillgänglighet och modern design**
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Skärmdumpar
 
-## Learn More
+| Desktop Dark | Desktop Light |
+|:---:|:---:|
+| ![Desktop Dark](public/screenshoot/desktop-dark.png) | ![Desktop Light](public/screenshoot/desktop-light.png) |
 
-To learn more about Next.js, take a look at the following resources:
+| Mobilmeny Dark | Mobilmeny Light |
+|:---:|:---:|
+| ![Mobilmeny Dark](public/screenshoot/mobil-menu-dark.png) | ![Mobilmeny Light](public/screenshoot/mobile-light.png) |
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Kontakt
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Utvecklad av [Josefine Eriksson](https://kodochdesign.se)
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+> Detta är en mockup/prototyp och inte en produktionssatt tjänst. Syftet är att visa design.

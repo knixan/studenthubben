@@ -8,6 +8,8 @@ import { AppBar, Toolbar, Typography, Button, Container, Box, IconButton, Drawer
 import { ThemeContext } from './ThemeRegistry';
 import MenuIcon from '@mui/icons-material/Menu';
 import LoginIcon from '@mui/icons-material/Login';
+import Brightness2Icon from '@mui/icons-material/Brightness2';
+import Brightness7Icon from '@mui/icons-material/Brightness7';
 
 const navItems = [
   { name: 'För Studenter', href: '#studenter' },
@@ -41,16 +43,31 @@ export function Header() {
           </ListItem>
         ))}
         <ListItem disablePadding>
-            <ListItemButton component="a" href="#" sx={{ textAlign: 'center' }}>
-                <Button variant="contained" endIcon={<LoginIcon />} sx={{ 
-                    borderRadius: '999px', 
-                    fontWeight: 700,
-                    padding: '10px 16px',
-                    width: '100%',
-                }}>
-                    Logga In / Registrera
-                </Button>
-            </ListItemButton>
+          <ListItemButton component="a" href="#" sx={{ textAlign: 'center' }}>
+            <Button variant="contained" endIcon={<LoginIcon />} sx={{ 
+              borderRadius: '999px', 
+              fontWeight: 700,
+              padding: '10px 16px',
+              width: '100%',
+            }}>
+              Logga In / Registrera
+            </Button>
+          </ListItemButton>
+        </ListItem>
+        <ListItem disablePadding>
+          <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center', width: '100%', mt: 2 }}>
+            {mode === 'dark' ? (
+              <Brightness2Icon sx={{ color: theme.palette.text.secondary, mr: 1 }} />
+            ) : (
+              <Brightness7Icon sx={{ color: theme.palette.warning?.main || '#fbbf24', mr: 1 }} />
+            )}
+            <Switch
+              checked={mode === 'dark'}
+              onChange={toggle}
+              color="default"
+              inputProps={{ 'aria-label': 'toggle theme' }}
+            />
+          </Box>
         </ListItem>
       </List>
     </Box>
@@ -71,7 +88,7 @@ export function Header() {
             aria-label="open drawer"
             edge="start"
             onClick={handleDrawerToggle}
-            sx={{ mr: 2, color: theme.palette.text.primary }}
+            sx={{ ml: 3, color: theme.palette.text.primary }}
           >
             <MenuIcon />
           </IconButton>
