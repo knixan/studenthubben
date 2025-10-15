@@ -91,7 +91,7 @@ Designen fokuserar på:
 |:---:|:---:|
 | ![Desktop Dark](public/screenshoot/desktop-dark.png) | ![Desktop Light](public/screenshoot/desktop-light.png) |
 
-| Mobilmeny – Dark | Mobilmeny – Light |
+| Mobilmeny – Dark - meny | Mobilmeny – Light |
 |:---:|:---:|
 | ![Mobilmeny Dark](public/screenshoot/mobil-menu-dark.png) | ![Mobilmeny Light](public/screenshoot/mobile-light.png) |
 
