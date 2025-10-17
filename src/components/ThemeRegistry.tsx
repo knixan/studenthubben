@@ -19,11 +19,10 @@ const darkTheme = createTheme({
       main: '#4ade80',
     },
     background: {
-      default: '#0a1120', // Djupare mörkblå
-      paper: '#16213a',   // Mörkare blågrå för ytor
-    },
+      default: '#0a1120', 
+      paper: '#16213a',  
     text: {
-      primary: '#f8fafc', // Nästan vit
+      primary: '#f8fafc', 
       secondary: '#b6c2d6',
     },
     divider: 'rgba(248,250,252,0.12)'
@@ -34,7 +33,7 @@ const darkTheme = createTheme({
       defaultProps: { elevation: 0 },
       styleOverrides: {
         root: {
-          backgroundColor: 'rgba(10,17,32,0.98)', // Nästan svartblå
+          backgroundColor: 'rgba(10,17,32,0.98)', 
           color: '#f8fafc',
           backdropFilter: 'saturate(180%) blur(10px)',
           borderBottom: '1px solid rgba(248,250,252,0.12)'
