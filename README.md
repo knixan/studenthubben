@@ -1,6 +1,6 @@
 # 🎓 StudentHubben – Mockup
 
-**StudentHubben** är en modern digital plattform för Sveriges studentvärld.  
+**StudentHubben** är en Mockup en en modern digital plattform för Sveriges studentvärld.  
 Denna mockup är byggd med **Next.js**, **React** och **Material UI**, och illustrerar hur ett studentcommunity kan se ut – med fokus på **nätverkande**, **samarbete** och **tillgänglighet** för **studenter**, **kårer** och **arbetsgivare**.
 
 ## ![Mockup](public/screenshoot/mockup-studenthubben.jpg)
