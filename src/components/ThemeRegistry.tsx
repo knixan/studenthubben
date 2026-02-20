@@ -1,10 +1,14 @@
 "use client";
 
 import React, { createContext, useState } from "react";
-import { AppRouterCacheProvider } from "@mui/material-nextjs/v13-appRouter";
+import createCache from "@emotion/cache";
+import { CacheProvider } from "@emotion/react";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 import { CssBaseline } from "@mui/material";
 import baseTheme from "@/theme/theme";
+
+// Create emotion cache for client-side
+const clientSideEmotionCache = createCache({ key: "css", prepend: true });
 
 const lightTheme = baseTheme;
 const darkTheme = createTheme({
@@ -78,13 +82,13 @@ export default function ThemeRegistry({ children }: Props) {
   const toggle = () => setMode((m) => (m === "light" ? "dark" : "light"));
   const themeObj = mode === "light" ? lightTheme : darkTheme;
   return (
-    <AppRouterCacheProvider>
+    <CacheProvider value={clientSideEmotionCache}>
       <ThemeContext.Provider value={{ mode, toggle }}>
         <ThemeProvider theme={themeObj}>
           <CssBaseline />
           {children}
         </ThemeProvider>
       </ThemeContext.Provider>
-    </AppRouterCacheProvider>
+    </CacheProvider>
   );
 }
